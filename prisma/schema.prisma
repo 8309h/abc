@@ -20,6 +20,7 @@ model User {
   password  String
   transactions Transaction[]
   budgets   Budget[]
+  tokens    Token[]
 }
 
 model Transaction {
@@ -48,3 +49,11 @@ model Budget {
   user        User          @relation(fields: [userId], references: [id])
 }
 
+model Token {
+  id        Int      @id @default(autoincrement())
+  token     String
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
