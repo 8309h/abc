@@ -10,9 +10,8 @@ const reportRoutes = require('./reports');
 const categoriesRoutes = require('./categories');
 const currencyRoutes = require('./currency');
 
-
 const app = express();
-// const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3000;
 // const JWT_SECRET = process.env.JWT_SECRET;
 
