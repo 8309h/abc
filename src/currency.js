@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+require('dotenv').config();
 
 const router = express.Router();
 const FIXER_API_KEY = process.env.FIXER_API_KEY;
