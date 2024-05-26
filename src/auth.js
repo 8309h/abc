@@ -19,7 +19,7 @@ const generateToken = (userId) => {
 router.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await prisma.user.create({
+    const user = await prisma.User.create({
         data: {
             name,
             email,
